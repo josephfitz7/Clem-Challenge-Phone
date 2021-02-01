@@ -1,0 +1,54 @@
+using System;
+using System.Linq;
+using System.Collections;
+using System.Collections.Generic;
+
+public class PhoneStuff
+{
+    public static void Main(string[] args)
+    {
+        List<string> words = new List<string>{"foo", "bar", "baz", "foobar", "emo", "cap", "car", "cat"};
+        List<string> inPhone = new List<string>();
+
+        string phoneNumber = "3662277815781519518916891";
+
+    /*
+        while(Console.next())
+        {
+            words.add(Console.nextLine());
+        } 
+    */
+    
+        Console.WriteLine(phoneNumber);
+        string[] nums = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+
+        foreach(string word in words)
+        {
+            string number = "";
+            
+            for(int i = 0; i < word.Count(); i++)
+            {
+                //int ind = int.Parse(word[i]);
+
+                for(int j = 0; j < nums.Length; j++)
+                {
+                    if(nums[j].Contains(word[i]) != false)
+                    {
+                        number += j;
+                    }
+                }
+            }
+            Console.Write("Number: " + number);
+            
+                if(phoneNumber.Contains(number))
+                {
+                    Console.Write("  Word: " + word);
+                }
+
+            Console.WriteLine();
+
+        }
+
+    }
+}
+
